@@ -1,11 +1,12 @@
 FROM ubuntu:20.10 as builder
 RUN apt update && apt install -y curl git unzip xz-utils zip libglu1-mesa openjdk-8-jdk wget
+RUN apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
 RUN useradd -ms /bin/bash user
 USER user
 WORKDIR /home/user
 
 #Installing Linux dependencies
-RUN apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+
 
 #Installing Android SDK
 RUN mkdir -p Android/sdk
