@@ -23,4 +23,4 @@ RUN flutter upgrade
 RUN flutter doctor
 
 RUN git clone https://github.com/vegardsl/flutter_dev.git
-RUN cd flutter_dev && flutter test
+RUN cd flutter_dev/hello_docker && flutter test
