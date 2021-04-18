@@ -4,6 +4,9 @@ RUN useradd -ms /bin/bash user
 USER user
 WORKDIR /home/user
 
+#Installing Linux dependencies
+RUN apt-get install clang cmake ninja-build pkg-config libgtk-3-dev
+
 #Installing Android SDK
 RUN mkdir -p Android/sdk
 ENV ANDROID_SDK_ROOT /home/user/Android/sdk
